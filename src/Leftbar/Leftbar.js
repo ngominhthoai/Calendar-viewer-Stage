@@ -209,7 +209,7 @@ export default class Leftbar extends React.Component {
         if (current_enseignant_filters.length !== 0) {
           valid_event = false;
           current_enseignant_filters.forEach((filter_enseignant) => {
-            if (event.extendedProps.enseignant === filter_enseignant.id) {
+            if (event.extendedProps.enseignant.includes(filter_enseignant.id)) {
               valid_event = true;
             }
           });
@@ -220,7 +220,7 @@ export default class Leftbar extends React.Component {
         if (current_salle_filters.length !== 0) {
           valid_event = false;
           current_salle_filters.forEach((filter_salle) => {
-            if (event.extendedProps.salle === filter_salle.id) {
+            if (event.extendedProps.salle.includes(filter_salle.id)) {
               valid_event = true;
             }
           });
